@@ -22,7 +22,7 @@ public class Poll {
     private String question;
 
     @OneToMany(cascade=CascadeType.ALL)
-    @JoinColumn(name="POOL_ID")
+    @JoinColumn(name="POLL_ID")
     @OrderBy
     private Set<Option> options;
 
