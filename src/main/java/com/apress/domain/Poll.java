@@ -15,7 +15,7 @@ public class Poll {
     
     @Id
     @GeneratedValue
-    @Column(name="POO_ID")
+    @Column(name="POLL_ID")
     private Long id;
 
     @Column(name="QUESTION")
