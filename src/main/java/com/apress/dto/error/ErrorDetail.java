@@ -1,4 +1,8 @@
-package com.apress.error;
+package com.apress.dto.error;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
 
 public class ErrorDetail {
     private String title;
@@ -6,6 +10,7 @@ public class ErrorDetail {
     private String detail;
     private long timeStamp;
     private String developerMessage;
+    private Map<String, List<ValidationError>> errors = new HashMap<String, List<ValidationError>>();
 
     public ErrorDetail() {}
 
@@ -55,6 +60,14 @@ public class ErrorDetail {
 
     public void setDeveloperMessage(String developerMessage) {
         this.developerMessage = developerMessage;
+    }
+
+    public Map<String, List<ValidationError>> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(Map<String, List<ValidationError>> errors) {
+        this.errors = errors;
     }
 
 }

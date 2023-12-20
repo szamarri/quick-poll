@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.Optional;
 
 import javax.inject.Inject;
+import jakarta.validation.Valid;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class PollController {
     }
 
     @PostMapping("/polls")
-    public ResponseEntity<?> createPoll(@RequestBody Poll poll) {
+    public ResponseEntity<?> createPoll(@Valid @RequestBody Poll poll) {
         poll = pollRepository.save(poll);
 
         // Set the location header for the newly created resource
